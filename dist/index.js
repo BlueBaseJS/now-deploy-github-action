@@ -11331,15 +11331,15 @@ if (!REPO_DIRECTORY) {
 
 let GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-dev';
 
-if (GITHUB_BRANCH === 'staging') {
-	GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-staging';
+if (GITHUB_BRANCH === 'next') {
+	GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-next';
 } else if (GITHUB_BRANCH === 'master') {
 	GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-production';
 }
 
 let NOW_TARGET;
 
-if (GITHUB_BRANCH === 'staging') {
+if (GITHUB_BRANCH === 'next') {
 	NOW_TARGET = 'staging';
 } else if (GITHUB_BRANCH === 'master') {
 	NOW_TARGET = 'production';

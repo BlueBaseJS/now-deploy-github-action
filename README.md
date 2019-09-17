@@ -4,11 +4,13 @@ This action is used to deploy BlueBase projects to Now.
 
 This action uses GitHub API to set published build as a deployment.
 
-| Branch  | Target     |
-| ------- | ---------- |
-| master  | production |
-| staging | staging    |
-| (other) | random     |
+| Branch  | Target     | GitHub Enviornment |
+| ------- | ---------- | ------------------ |
+| master  | production | web-production     |
+| next    | staging    | web-next           |
+| alpha   | null       | web-alpha          |
+| beta    | null       | web-beta           |
+| (other) | null       |                    |
 
 ## Outputs
 
