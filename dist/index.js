@@ -11331,10 +11331,22 @@ if (!REPO_DIRECTORY) {
 
 let GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-dev';
 
-if (GITHUB_BRANCH === 'next') {
-	GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-next';
-} else if (GITHUB_BRANCH === 'master') {
-	GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-production';
+switch (GITHUB_BRANCH) {
+	case 'alpha':
+		GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-alpha';
+		break;
+
+	case 'beta':
+		GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-beta';
+		break;
+
+	case 'next':
+		GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-next';
+		break;
+
+	case 'master':
+		GITHUB_DEPLOYMENT_ENVIORNMENT = 'web-production';
+		break;
 }
 
 let NOW_TARGET;
