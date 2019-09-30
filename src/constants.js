@@ -48,11 +48,7 @@ if (GITHUB_BRANCH === 'next') {
 	NOW_TARGET = 'production';
 }
 
-console.log('Input in action', core.getInput('configs'));
-
 const NOW_CONFIGS = JSON.parse(core.getInput('configs') || '{}');
-
-console.log('NOW_CONFIGS', NOW_CONFIGS);
 
 module.exports = {
 	NOW_TOKEN,

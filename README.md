@@ -19,10 +19,13 @@ This action uses GitHub API to set published build as a deployment.
 The url of the client bundle.
 
 ## Example usage
+You can pass all [NOW configurations](https://zeit.co/docs/v2/advanced/configuration) as JSON String to the configs variable
 
 ```yml
 - name: Now Deploy
   uses: BlueBaseJS/now-deploy-github-action@master
+  with:
+    configs: "{\"scope\":\"mevris\"}" 
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     NOW_TOKEN: ${{ secrets.ZEIT_TOKEN }}
