@@ -8382,6 +8382,14 @@ async function deploy() {
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
 
+	console.log('Final Object', {
+		token: NOW_TOKEN,
+		target: NOW_TARGET,
+		name,
+		alias: [name],
+		...NOW_CONFIGS,
+	});
+	
 	for await (const event of createDeployment('build/web/client', {
 		token: NOW_TOKEN,
 		target: NOW_TARGET,
