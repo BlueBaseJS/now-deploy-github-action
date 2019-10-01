@@ -8381,7 +8381,7 @@ async function deploy() {
 	let deployment;
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
-
+	
 	for await (const event of createDeployment('build/web/client', {
 		token: NOW_TOKEN,
 		target: NOW_TARGET,

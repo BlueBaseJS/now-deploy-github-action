@@ -1,10 +1,9 @@
 name: 'Now Deploy'
 description: 'Deploys a project to Now'
-# inputs:
-#   who-to-greet: # id of input
-#     description: 'Who to greet'
-#     required: true
-#     default: 'World'
+inputs:
+  configs: # id of input
+    description: 'Stringified configs'
+    default: "{}"
 outputs:
   url:
     description: 'The url of the deployment'
