@@ -25,7 +25,7 @@ You can pass all [NOW configurations](https://zeit.co/docs/v2/advanced/configura
 - name: Now Deploy
   uses: BlueBaseJS/now-deploy-github-action@master
   with:
-    configs: "{\"scope\":\"mevris\"}" 
+    configs: "{\"teamId\":\"team_XXXXXXXXXX\"}" 
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     NOW_TOKEN: ${{ secrets.ZEIT_TOKEN }}
