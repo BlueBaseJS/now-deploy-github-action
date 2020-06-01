@@ -8021,7 +8021,7 @@ module.exports = function (Yallist) {
 const { createDeployment } = __webpack_require__(522);
 const slugify = __webpack_require__(950);
 const {
-	// BUILD_PATH,
+	BUILD_PATH,
 	GITHUB_REPOSITORY_NAME,
 	NOW_TOKEN,
 	NOW_TARGET,
@@ -8037,7 +8037,7 @@ async function deploy() {
 	for await (const event of createDeployment(
 		{
 			token: NOW_TOKEN,
-			// path: BUILD_PATH,
+			path: BUILD_PATH,
 			...NOW_CONFIGS,
 		},
 		{
@@ -14698,10 +14698,10 @@ if (GITHUB_BRANCH === 'next') {
 }
 
 const NOW_CONFIGS = JSON.parse(core.getInput('configs') || '{}');
-// const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
+const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
 
 module.exports = {
-	// BUILD_PATH,
+	BUILD_PATH,
 	NOW_TOKEN,
 	NOW_TARGET,
 	NOW_CONFIGS,

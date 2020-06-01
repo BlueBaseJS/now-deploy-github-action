@@ -4,8 +4,8 @@ inputs:
   configs:
     description: 'Stringified configs'
     default: '{}'
-  # build-path:
-  #   description: 'Path of the build directory'
+  build-path:
+    description: 'Path of the build directory'
 outputs:
   url:
     description: 'The url of the deployment'
