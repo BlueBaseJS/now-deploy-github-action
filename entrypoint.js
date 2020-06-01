@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+console.log('Starting Now action...');
+
 const { GITHUB_TOKEN } = require('./src/constants');
 
 const run = require('./src/index');
