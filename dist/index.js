@@ -8021,7 +8021,7 @@ module.exports = function (Yallist) {
 const { createDeployment } = __webpack_require__(522);
 const slugify = __webpack_require__(950);
 const {
-	BUILD_PATH,
+	// BUILD_PATH,
 	GITHUB_REPOSITORY_NAME,
 	NOW_TOKEN,
 	NOW_TARGET,
@@ -8034,22 +8034,25 @@ async function deploy() {
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
 
-	for await (const event of createDeployment({
-		token: NOW_TOKEN,
-		target: NOW_TARGET,
-		path: BUILD_PATH,
-		name,
-		alias: [name],
-		...getConfigs(),
-		...NOW_CONFIGS,
-	})) {
-		console.info('Deployment Event', event);
-
+	for await (const event of createDeployment(
+		{
+			token: NOW_TOKEN,
+			// path: BUILD_PATH,
+			...NOW_CONFIGS,
+		},
+		{
+			target: NOW_TARGET,
+			name,
+			alias: [name],
+			...getConfigs(),
+		}
+	)) {
 		if (event.type === 'ready') {
 			deployment = event.payload;
 			break;
 		}
 		if (event.type === 'error') {
+			console.info('Deployment Error', event);
 			throw Error(event.payload.message);
 		}
 	}
@@ -14695,10 +14698,10 @@ if (GITHUB_BRANCH === 'next') {
 }
 
 const NOW_CONFIGS = JSON.parse(core.getInput('configs') || '{}');
-const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
+// const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
 
 module.exports = {
-	BUILD_PATH,
+	// BUILD_PATH,
 	NOW_TOKEN,
 	NOW_TARGET,
 	NOW_CONFIGS,

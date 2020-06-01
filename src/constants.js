@@ -49,10 +49,10 @@ if (GITHUB_BRANCH === 'next') {
 }
 
 const NOW_CONFIGS = JSON.parse(core.getInput('configs') || '{}');
-const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
+// const BUILD_PATH = core.getInput('build-path') || REPO_DIRECTORY;
 
 module.exports = {
-	BUILD_PATH,
+	// BUILD_PATH,
 	NOW_TOKEN,
 	NOW_TARGET,
 	NOW_CONFIGS,
