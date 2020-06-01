@@ -8043,7 +8043,7 @@ async function deploy() {
 		{
 			target: NOW_TARGET,
 			name,
-			alias: [name],
+			// alias: [name],
 			...getConfigs(),
 		}
 	)) {
