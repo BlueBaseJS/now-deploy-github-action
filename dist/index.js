@@ -8043,6 +8043,8 @@ async function deploy() {
 		...getConfigs(),
 		...NOW_CONFIGS,
 	})) {
+		console.info('Deployment Event', event);
+
 		if (event.type === 'ready') {
 			deployment = event.payload;
 			break;
