@@ -85,10 +85,21 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
-"@types/tough-cookie@2.x":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.5.tgz#9da44ed75571999b65c37b60c9b2b88db54c585d"
-  integrity sha512-SCcK7mvGi3+ZNz833RRjFIxrn4gI1PPR3NtuIS+6vMkvmsGjosqTJwRt5bAEFLRz+wtJMWv8+uOnZf2hi2QXTg==
+"@vercel/client@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@vercel/client/-/client-8.0.1.tgz#798744edbf6065c465b674dacb997353d2ffa89c"
+  integrity sha512-ysMjBjfJUtgKX7dZ1OKypPiDSwh/qIAf3csXQACHNnJTwVRnu9Op2nj6FgvVmmX/nA/29ZdjENTmNTsW1qdRIg==
+  dependencies:
+    "@zeit/fetch" "5.2.0"
+    async-retry "1.2.3"
+    async-sema "3.0.0"
+    fs-extra "8.0.1"
+    ignore "4.0.6"
+    ms "2.1.2"
+    node-fetch "2.6.0"
+    querystring "^0.2.0"
+    recursive-readdir "2.2.2"
+    sleep-promise "8.0.1"
 
 "@zeit/dns-cached-resolve@2.1.0":
   version "2.1.0"
@@ -108,22 +119,22 @@
   dependencies:
     "@zeit/dns-cached-resolve" "2.1.0"
 
-"@zeit/fetch-retry@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@zeit/fetch-retry/-/fetch-retry-4.0.0.tgz#ad7fe06c4ceb3dcbd76c04db95b1b624ed6fcf3f"
-  integrity sha512-ALXnrCPpiVWha/L3Mm1klPhqmVTKmPQ2dmb5YIsSCrMBJugfhDb42kacVsvQ11vAFRE1LRaJ9Pmw16zEMvQnbw==
+"@zeit/fetch-retry@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@zeit/fetch-retry/-/fetch-retry-4.1.0.tgz#a960e335b3ecf01f219e045a4b8819b6ef34b1f4"
+  integrity sha512-2/vtTzIs3/Bp5tNOmCpICCRooa+v0wL4e+3Afl4etyqZrjOmCMfKshWPSHTxLe20qfsn010qXy/hK6yqD4t0zg==
   dependencies:
-    async-retry "^1.1.3"
+    async-retry "^1.3.1"
     debug "^3.1.0"
 
-"@zeit/fetch@5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@zeit/fetch/-/fetch-5.1.0.tgz#5a24c03ce690f63a81543a016e54aa59f8ca71a0"
-  integrity sha512-e+ZClpgyP8AlOcewSNrpJzXLjPLG+dXBnBg3vYXPYdYItj2dWaI1mRjiyBriH/U9Gt48wZJukz9Q3uhMYS4X6w==
+"@zeit/fetch@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@zeit/fetch/-/fetch-5.2.0.tgz#7a8bfa31284e33a4e3fe7940351b0d48264d167d"
+  integrity sha512-S4TFaT210j/lgzHjaxN2SiaMxXGeoB4hghNlhlvSqwTFSDNIqyJIDKFZQy+r3NKJOQU+RB5yGKJt8LS1pPHUrw==
   dependencies:
     "@types/async-retry" "1.2.1"
     "@zeit/fetch-cached-dns" "1.2.0"
-    "@zeit/fetch-retry" "4.0.0"
+    "@zeit/fetch-retry" "^4.1.0"
     agentkeepalive "3.4.1"
     debug "3.1.0"
 
@@ -139,13 +150,6 @@ agentkeepalive@3.4.1:
   dependencies:
     humanize-ms "^1.2.1"
 
-already@1.x:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/already/-/already-1.9.0.tgz#501221366eaafc5e3edbe6be4dc86f74ada3fe99"
-  integrity sha512-BiWXDKi5r17EK/h59RkEwxEzEoxjtAkl8HyrEnycP8osmOOn7tx1kuEuGnOLhDTKZ3er7Sf3QXtXXZBnDKxEIQ==
-  dependencies:
-    throat "^5.0.0"
-
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -156,10 +160,17 @@ ansi-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
   integrity sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
 
-async-retry@1.2.3, async-retry@^1.1.3:
+async-retry@1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/async-retry/-/async-retry-1.2.3.tgz#a6521f338358d322b1a0012b79030c6f411d1ce0"
   integrity sha512-tfDb02Th6CE6pJUF2gjW5ZVjsgwlucVXOEQMvEX9JgSJMs9gAX+Nz3xRuJBKuUYjTSYORqvDBORdAQ3LU59g7Q==
+  dependencies:
+    retry "0.12.0"
+
+async-retry@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/async-retry/-/async-retry-1.3.1.tgz#139f31f8ddce50c0870b0ba558a6079684aaed55"
+  integrity sha512-aiieFW/7h3hY0Bq5d+ktDBejxuwR78vRu9hDUdR8rNhSaQ29VzPL4AoIRG7D/c7tdenwOcKvgPM6tIxB3cB6HA==
   dependencies:
     retry "0.12.0"
 
@@ -195,11 +206,6 @@ btoa-lite@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/btoa-lite/-/btoa-lite-1.0.0.tgz#337766da15801210fdd956c22e9c6891ab9d0337"
   integrity sha1-M3dm2hWAEhD92VbCLpxokaudAzc=
-
-callguard@1.x:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/callguard/-/callguard-1.2.1.tgz#3d8df2ea91c946abf1c43b7d6abde23d3aecfdbb"
-  integrity sha512-QTxtuE+QrPA/ZStfYEf/IL1RqyOEpg3CMKp35oTs4n91WveYjbnbPJ0O2ob+RxhPzOuvb0KgQvYwJzhZ6nswXQ==
 
 camelcase@^5.0.0:
   version "5.3.1"
@@ -280,19 +286,6 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-fetch-h2@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/fetch-h2/-/fetch-h2-2.2.0.tgz#cb7259648841e6c0bc4589c0fb0a1fcfc03a3276"
-  integrity sha512-Jizh699d6dYeEDCwy9ey4wwvh7kNw8fDa2gtDKfiDcz7R5pkB1aGBZTzSPFO754bx6mCGAX8L5vIfxf4XwqtfQ==
-  dependencies:
-    "@types/tough-cookie" "2.x"
-    already "1.x"
-    callguard "1.x"
-    get-stream "5.x"
-    through2 "3.x"
-    to-arraybuffer "1.x"
-    tough-cookie "3.x"
-
 find-up@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
@@ -313,13 +306,6 @@ get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
   integrity sha512-3t6rVToeoZfYSGd8YoLFR2DJkiQrIiUrGcjvFX2mDw3bn6k2OtwHN0TNCLbBO+w8qTvimhDkv+LSscbJY1vE6w==
-
-get-stream@5.x:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-5.1.0.tgz#01203cdc92597f9b909067c3e656cc1f4d3c4dc9"
-  integrity sha512-EXr1FOzrzTfGeL0gQdeFEvOMm2mzMOglyiOXSTpPC+iAjAKftbr3jpCMWynogwYnM+eSj9sHGc6wjIcDvYiygw==
-  dependencies:
-    pump "^3.0.0"
 
 get-stream@^4.0.0:
   version "4.1.0"
@@ -353,10 +339,10 @@ humanize@^0.0.9:
   resolved "https://registry.yarnpkg.com/humanize/-/humanize-0.0.9.tgz#1994ffaecdfe9c441ed2bdac7452b7bb4c9e41a4"
   integrity sha1-GZT/rs3+nEQe0r2sdFK3u0yeQaQ=
 
-inherits@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
-  integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
+ignore@4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
+  integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
 interpolate@^0.1.0:
   version "0.1.0"
@@ -367,11 +353,6 @@ invert-kv@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
-
-ip-regex@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
-  integrity sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk=
 
 is-fullwidth-code-point@^1.0.0:
   version "1.0.0"
@@ -504,36 +485,6 @@ node-fetch@2.6.0, node-fetch@^2.3.0:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
-now-client@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/now-client/-/now-client-4.1.2.tgz#70b4ea577a605d1df7e2fdef761fb7c38bcf78b2"
-  integrity sha512-quHDR6pRv4XBdKZC7u36KuoT8+zZfSBULCQUFlHPOEY3GElyGYpEa/CDquChezZqyLg8PMnZNu7iuVrAXSFsBw==
-  dependencies:
-    "@zeit/fetch" "5.1.0"
-    async-retry "1.2.3"
-    fetch-h2 "2.2.0"
-    fs-extra "8.0.1"
-    node-fetch "2.6.0"
-    querystring "^0.2.0"
-    recursive-readdir "2.2.2"
-
-now-client@^5.1.3:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/now-client/-/now-client-5.1.3.tgz#fe4ddf90d7f53e7a3e4e9b3d61ce177254ac688c"
-  integrity sha512-o9ZFQFuHibEsS2RktuQU1hGJ8N8eA84pgky5BT9NDjgC2Ay3YLl8SCRYvTgvtjiyiu7oIl86rrrGikGJQgSvJQ==
-  dependencies:
-    "@zeit/fetch" "5.1.0"
-    async-retry "1.2.3"
-    async-sema "3.0.0"
-    fetch-h2 "2.2.0"
-    fs-extra "8.0.1"
-    ms "2.1.2"
-    node-fetch "2.6.0"
-    now-client "4.1.2"
-    querystring "^0.2.0"
-    recursive-readdir "2.2.2"
-    sleep-promise "8.0.1"
-
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -619,11 +570,6 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
-psl@^1.1.28:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/psl/-/psl-1.4.0.tgz#5dd26156cdb69fa1fdb8ab1991667d3f80ced7c2"
-  integrity sha512-HZzqCGPecFLyoRj5HLfuDSKYTJkAfB5thKBIkRHtGjWwY7p1dAyveIbXIq4tO0KYfDF2tHqPUgY9SDnGm00uFw==
-
 pump@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -632,24 +578,10 @@ pump@^3.0.0:
     end-of-stream "^1.1.0"
     once "^1.3.1"
 
-punycode@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
-  integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-
 querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
-
-"readable-stream@2 || 3":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
-  integrity sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
-  dependencies:
-    inherits "^2.0.3"
-    string_decoder "^1.1.1"
-    util-deprecate "^1.0.1"
 
 recursive-readdir@2.2.2:
   version "2.2.2"
@@ -672,11 +604,6 @@ retry@0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
-
-safe-buffer@~5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
-  integrity sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
 
 semver@^5.5.0:
   version "5.7.1"
@@ -732,13 +659,6 @@ string-width@^2.0.0, string-width@^2.1.1:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
-string_decoder@^1.1.1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.3.0.tgz#42f114594a46cf1a8e30b0a84f56c78c3edac21e"
-  integrity sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
-  dependencies:
-    safe-buffer "~5.2.0"
-
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -758,32 +678,6 @@ strip-eof@^1.0.0:
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
 
-throat@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
-  integrity sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
-
-through2@3.x:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/through2/-/through2-3.0.1.tgz#39276e713c3302edf9e388dd9c812dd3b825bd5a"
-  integrity sha512-M96dvTalPT3YbYLaKaCuwu+j06D/8Jfib0o/PxbVt6Amhv3dUAtW6rTV1jPgJSBG83I/e04Y6xkVdVhSRhi0ww==
-  dependencies:
-    readable-stream "2 || 3"
-
-to-arraybuffer@1.x:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
-  integrity sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
-
-tough-cookie@3.x:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-3.0.1.tgz#9df4f57e739c26930a018184887f4adb7dca73b2"
-  integrity sha512-yQyJ0u4pZsv9D4clxO69OEjLWYw+jbgspjTue4lTQZLfV0c5l1VmK2y1JK8E9ahdpltPOaAThPcp5nKPUgSnsg==
-  dependencies:
-    ip-regex "^2.1.0"
-    psl "^1.1.28"
-    punycode "^2.1.1"
-
 universal-user-agent@^2.0.3:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-2.1.0.tgz#5abfbcc036a1ba490cb941f8fd68c46d3669e8e4"
@@ -802,11 +696,6 @@ universalify@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
-
-util-deprecate@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
-  integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
 which-module@^2.0.0:
   version "2.0.0"

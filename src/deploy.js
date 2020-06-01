@@ -1,4 +1,4 @@
-const { createDeployment } = require('now-client');
+const { createDeployment } = require('@vercel/client');
 const slugify = require('slugify');
 const {
 	BUILD_PATH,
@@ -14,9 +14,10 @@ async function deploy() {
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
 
-	for await (const event of createDeployment(BUILD_PATH, {
+	for await (const event of createDeployment({
 		token: NOW_TOKEN,
 		target: NOW_TARGET,
+		path: BUILD_PATH,
 		name,
 		alias: [name],
 		...getConfigs(),

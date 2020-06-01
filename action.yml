@@ -6,7 +6,6 @@ inputs:
     default: '{}'
   build-path:
     description: 'Path of the build directory'
-    default: 'build/web/client'
 outputs:
   url:
     description: 'The url of the deployment'
