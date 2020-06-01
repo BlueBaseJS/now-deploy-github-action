@@ -1,6 +1,7 @@
 const { createDeployment } = require('now-client');
 const slugify = require('slugify');
 const {
+	BUILD_PATH,
 	GITHUB_REPOSITORY_NAME,
 	NOW_TOKEN,
 	NOW_TARGET,
@@ -11,8 +12,8 @@ async function deploy() {
 	let deployment;
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
-	
-	for await (const event of createDeployment('build/web/client', {
+
+	for await (const event of createDeployment(BUILD_PATH, {
 		token: NOW_TOKEN,
 		target: NOW_TARGET,
 		name,
