@@ -8371,22 +8371,25 @@ module.exports = readShebang;
 const { createDeployment } = __webpack_require__(682);
 const slugify = __webpack_require__(950);
 const {
+	BUILD_PATH,
 	GITHUB_REPOSITORY_NAME,
 	NOW_TOKEN,
 	NOW_TARGET,
 	NOW_CONFIGS,
 } = __webpack_require__(648);
+const getConfigs = __webpack_require__(902);
 
 async function deploy() {
 	let deployment;
 
 	const name = slugify(GITHUB_REPOSITORY_NAME);
-	
-	for await (const event of createDeployment('build/web/client', {
+
+	for await (const event of createDeployment(BUILD_PATH, {
 		token: NOW_TOKEN,
 		target: NOW_TARGET,
 		name,
 		alias: [name],
+		...getConfigs(),
 		...NOW_CONFIGS,
 	})) {
 		if (event.type === 'ready') {
@@ -11358,8 +11361,10 @@ if (GITHUB_BRANCH === 'next') {
 }
 
 const NOW_CONFIGS = JSON.parse(core.getInput('configs') || '{}');
+const BUILD_PATH = core.getInput('build-path') || 'build/web/client';
 
 module.exports = {
+	BUILD_PATH,
 	NOW_TOKEN,
 	NOW_TARGET,
 	NOW_CONFIGS,
@@ -30029,6 +30034,40 @@ function patchForDeprecation (octokit, apiOptions, method, methodName) {
 
   return patchedMethod
 }
+
+
+/***/ }),
+
+/***/ 902:
+/***/ (function(module, __unusedexports, __webpack_require__) {
+
+"use strict";
+/* eslint-disable @typescript-eslint/typedef */
+
+
+const fs = __webpack_require__(747);
+
+function readJson(path) {
+	let rawdata = fs.readFileSync(path);
+	return JSON.parse(rawdata);
+}
+
+function getConfigs() {
+	try {
+		return readJson('now.json');
+	} catch (error) {
+		//
+	}
+
+	try {
+		return readJson('vercel.json');
+	} catch (error) {
+		return {};
+	}
+}
+
+console.log('Loaded config file', getConfigs());
+module.exports = getConfigs;
 
 
 /***/ }),
