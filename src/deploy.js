@@ -7,6 +7,7 @@ const {
 	NOW_TARGET,
 	NOW_CONFIGS,
 } = require('./constants');
+const getConfigs = require('./reader');
 
 async function deploy() {
 	let deployment;
@@ -18,6 +19,7 @@ async function deploy() {
 		target: NOW_TARGET,
 		name,
 		alias: [name],
+		...getConfigs(),
 		...NOW_CONFIGS,
 	})) {
 		if (event.type === 'ready') {
