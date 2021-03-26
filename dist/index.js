@@ -1137,9 +1137,7 @@ function slugify(str) {
 }
 
 // Vercel
-// const vercelToken = core.getInput('vercel-token', { required: true });
-const vercelToken = core.getInput('NOW_TOKEN', { required: true });
-
+const vercelToken = core.getInput('vercel-token', { required: true });
 const vercelArgs = core.getInput('vercel-args');
 const vercelOrgId = core.getInput('vercel-org-id');
 const vercelProjectId = core.getInput('vercel-project-id');
